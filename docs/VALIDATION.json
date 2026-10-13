@@ -1,0 +1,45 @@
+{
+  "release": "0.1.0",
+  "date": "2026-10-12",
+  "node": "22.16.0",
+  "syntax": {
+    "status": "passed",
+    "scope": "all application JS, build/dev scripts, service worker"
+  },
+  "node_tests": {
+    "passed": 80,
+    "failed": 0,
+    "command": "npm test",
+    "includes": "pure unit tests, simulated AudioWorklet PCM capture at 44.1/48/96 kHz, Worker message contract, mocked microphone lifecycle, and capture-to-pitch-to-score integration"
+  },
+  "browser": {
+    "mode": "isolated DOM harness",
+    "passed": [
+      "library boots and renders original demo",
+      "search and empty state",
+      "favorites and queue controls",
+      "chart editor validates, shifts timing/pitch, applies changes",
+      "local TXT and WAV import with media matching",
+      "native deflate ZIP import with nested paths",
+      "rehearsal stage, lyrics, canvas, pause/resume controls",
+      "rehearsal results do not fabricate microphone scores",
+      "mobile library has no horizontal overflow",
+      "microphone-unavailable error is explicit",
+      "no uncaught page JavaScript exceptions"
+    ],
+    "skipped": [
+      "live getUserMedia / AudioWorklet device acquisition",
+      "origin IndexedDB persistence and service-worker offline loading",
+      "HTTP ES module delivery and production security headers",
+      "physical dual microphones and non-Chromium browsers"
+    ],
+    "page_errors": [],
+    "browser": "144.0.7559.96"
+  },
+  "deployment": {
+    "built": true,
+    "cloudflare_account_deployment_performed": false,
+    "github_repository_published": false
+  },
+  "interpretation": "Not a physical microphone, production-origin, or complete browser compatibility certification. Isolated Chromium ran the actual UI logic with named-module bundling, memory-only localStorage, bridged SHA-256, and an empty static catalog fetch test double. Real HTMLMediaElement Blob/WAV playback worked; no fake media clock was needed. Browser policies prevented normal URL navigation and getUserMedia, so production ES module/HTTP/CSP delivery, IndexedDB persistence, service-worker offline behavior, live capture, and physical dual-input synchronization remain unverified."
+}

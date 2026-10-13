@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.wrangler/
+test-results/
+.DS_Store
+__pycache__/

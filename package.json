@@ -1,0 +1,16 @@
+{
+  "name": "ultrastar-play-static",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Open-source, browser-native UltraStar karaoke. Static files, local songs, no backend.",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && npm run build"
+  }
+}
