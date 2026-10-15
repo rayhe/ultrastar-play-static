@@ -1,5 +1,13 @@
 # Testing
 
+## Publication validation: October 15, 2026
+
+The recovered release was independently checked on Windows with Node **22.23.3**: `npm ci` and `npm run check` passed, including **80 tests** and the static build. The original release commit is preserved in Git history.
+
+The supplied browser suite passed **12 HTTP integration checks** in headless Chrome **155.0.8059.40**, serving the actual `dist` files over localhost. This exercised normal ES module loading, local TXT/WAV and deflate ZIP imports, editor controls, rehearsal playback and results, mobile layout, and the AudioWorklet/Worker microphone pipeline. Chromium's synthetic A4 input produced a computed score of **10,000**, with no uncaught page errors. This used a fresh test profile and synthetic microphone input, not a physical microphone.
+
+These results do not validate production HTTPS/security headers, real microphones or duets, IndexedDB persistence across sessions, service-worker offline behavior, or Safari/Firefox/mobile hardware. The earlier isolated validation below remains a historical record. See `VALIDATION-2026-10-15.json` for this run.
+
 ## Recorded release validation: October 12, 2026
 
 **80 Node tests passed; 0 failed. 11 isolated Chromium UI checks passed; no uncaught page JavaScript errors.** Chromium version 144.0.7559.96; Node 22.16.0.

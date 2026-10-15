@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-15",
+  "source_commit": "7d6c39a13da2ebe40a95213b476b021e6d6a68f3",
+  "node": "22.23.3",
+  "commands": [
+    "npm ci",
+    "npm run check"
+  ],
+  "node_tests": {
+    "passed": 80,
+    "failed": 0
+  },
+  "build": {
+    "files": 28,
+    "size_kib": 173.0
+  },
+  "browser": {
+    "mode": "HTTP browser integration",
+    "passed": [
+      "library boots and renders original demo",
+      "search and empty state",
+      "favorites and queue controls",
+      "chart editor validates, shifts timing/pitch, applies changes",
+      "local TXT and WAV import with media matching",
+      "native deflate ZIP import with nested paths",
+      "rehearsal stage, lyrics, canvas, pause/resume controls",
+      "rehearsal results do not fabricate microphone scores",
+      "mobile library has no horizontal overflow",
+      "fake microphone traverses AudioWorklet, Worker, pitch display",
+      "synthetic A4 microphone earns a real computed score",
+      "no uncaught page JavaScript exceptions"
+    ],
+    "skipped": [],
+    "page_errors": [],
+    "browser": "155.0.8059.40",
+    "synthetic_microphone_score": 10000
+  },
+  "limitations": [
+    "Local HTTP origin, not production HTTPS or headers",
+    "Synthetic microphone only; no physical singing or duet validation",
+    "IndexedDB persistence and service-worker offline behavior not checked",
+    "Safari, Firefox and mobile hardware not checked"
+  ]
+}
